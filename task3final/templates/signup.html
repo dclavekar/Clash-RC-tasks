@@ -4,11 +4,13 @@
 </head>
 <body>
 <h1>Signup Page</h1>
-{% if message%}
+
 {%for m in messages %}
 <h2>{{m}}</h2>
 {%endfor%}
-{%endif%}
+{%if message%}
+{{message}}
+{% endif%}
 <form method="POST">
     {% csrf_token%}
     {{forms.p}}

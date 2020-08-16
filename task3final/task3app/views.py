@@ -18,15 +18,15 @@ def signup(request):
                 lastname = request.POST['lastname']
                 phoneno = request.POST['phoneno']
                 email = request.POST['email']
+                if(username=='' or password1=='' or email=='' or firstname=='' or lastname=='' or phoneno=='' ):
+                    messages.error(request,'Please fill all the fields')
+                    return redirect('signup')
 
                 user=User.objects.create_user(username=username,email=email,password=password1,first_name=firstname,last_name=lastname)
-                '''if(len(user)==0):
-                    messages.error(request, 'please fill all the fields')
-                    return render(request,'signup.html')'''
                 user.save()
                 profile=Profile(user=user, phoneno=phoneno)
                 profile.save()
-                messages.info(request,'User successfully created')
+                #messages.info(request,'User successfully created')
                 return render(request, 'loggedin.html', {'message': 'You are successfully logged in'})
 
 
@@ -53,7 +53,7 @@ def views_loggedin(request):
 
 def views_logout(request):
     logout(request)
-    return redirect('login.html')
+    return render (request,'login.html')
 
 
 

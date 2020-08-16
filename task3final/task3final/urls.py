@@ -20,10 +20,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('task3app.urls')),
-    path('login/',include('task3app.urls')),
-    path('logout/',include('task3app.urls')),
-    path('loggedin/',include('task3app.urls')),
+    #path('login/',include('task3app.urls')),
+    #path('logout/',include('task3app.urls')),
+    #path('loggedin/',include('task3app.urls')),
     #path('loggedin/logout/'), include('task3app.urls'),
-    path('loggedin/logout/login/', include('task3app.urls'))
+    #path('loggedin/logout/login/', include('task3app.urls'))
 
 ]
