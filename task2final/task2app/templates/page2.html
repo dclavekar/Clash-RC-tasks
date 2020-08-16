@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Emailpage</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+
+    Email address
+    <input type="text" name="email"><br>
+
+    <button type="submit" name="'submit">Submit</button>
+
+</form>
+</body>
+</html>

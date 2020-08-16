@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>User Details</title>
+</head>
+<body>
+
+<h2>{{message}}</h2>
+
+
+<form method="POST">
+    {% csrf_token %}
+    {% if profile %}
+    First Name
+    <h4>{{profile.user.first_name}}</h4>
+    Last Name
+    <h4>{{profile.user.last_name}}</h4>
+    Email address
+    <h4>{{profile.user.email}}</h4>
+    Phone number
+    <h4>{{profile.phoneno}}</h4>
+    Gender
+    <h4>{{profile.gender}}</h4>
+    {%endif%}
+
+
+
+</form>
+<a href="{% url 'page2' %}">Enter email again?</a>
+<a href="{% url 'page1' %}">enter user details again?</a>
+</body>
+</html>

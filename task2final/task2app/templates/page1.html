@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>homepage</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    First Name
+    <input type="text" name="firstname"><br>
+    Last Name
+    <input type="text" name="lastname"><br>
+    Email address
+    <input type="text" name="email"><br>
+    Phone number
+    <input type="text" name="phoneno"><br>
+    Gender
+    <input type="text" name="gender"><br>
+    <button type="submit" name="'submit">Submit</button>
+
+    {% for m in messages %}
+    {{m}}
+    {% endfor %}
+
+</form>
+</body>
+</html>

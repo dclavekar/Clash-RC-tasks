@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Log in Successful</title>
+</head>
+<body>
+
+
+{%if message %}
+
+<h2>{{message}}</h2>
+
+{%endif%}
+
+    <!--<button onclick="window.location.href={% url 'logout' %}" name="logout">Logout</button>-->
+    <a href="{% url 'logout' %}">
+        <button type="submit">Logout</button>
+    </a>
+
+</body>
+</html>
