@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Homepage</title>
+</head>
+<body>
+	{%for i in ls%}
+	{{i}}<br>
+	{%endfor%}
+	<form method="post">
+		{% csrf_token %}
+		<input type="number", name="number1">
+		<input type="number", name="number2">
+		<button type="submit" name="submit">SUBMIT</button>
+	</form>
+	
+	<!--
+	{% for no in ls%}
+		<p>{{no.number}}</p>
+	{% endfor %}
+	-->
+</body>
+</html>
