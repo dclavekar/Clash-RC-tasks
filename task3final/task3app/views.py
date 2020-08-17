@@ -26,8 +26,10 @@ def signup(request):
                 user.save()
                 profile=Profile(user=user, phoneno=phoneno)
                 profile.save()
+                login(request,user)
                 #messages.info(request,'User successfully created')
-                return render(request, 'loggedin.html', {'message': 'You are successfully logged in'})
+                #return render(request, 'loggedin.html', {'message': 'You are successfully logged in'})
+                return redirect('login')
 
 
             else:
